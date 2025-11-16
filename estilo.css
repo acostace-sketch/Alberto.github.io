@@ -1,0 +1,690 @@
+/* ==========================================
+   KIMETSU NO YAIBA - DEMON SLAYER CSS
+   Estilos avanzados de H1, P, backgrounds e imágenes
+   ========================================== */
+
+/* VARIABLES Y RESET */
+:root {
+    --color-primary: #c41e3a;
+    --color-secondary: #1a1a2e;
+    --color-accent: #fbbf24;
+    --color-light: #f8f9fa;
+    --color-dark: #0f0f0f;
+    --color-text: #e0e0e0;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   ESTILOS GLOBALES H1
+   ========================================== */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-shadow: 
+        0 0 10px rgba(196, 30, 58, 0.6),
+        0 0 20px rgba(196, 30, 58, 0.4),
+        0 0 30px rgba(196, 30, 58, 0.2);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
+    border: 2px solid rgba(196, 30, 58, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(196, 30, 58, 0.6),
+            0 0 20px rgba(196, 30, 58, 0.4),
+            0 0 30px rgba(196, 30, 58, 0.2);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(196, 30, 58, 0.8),
+            0 0 30px rgba(196, 30, 58, 0.6),
+            0 0 40px rgba(196, 30, 58, 0.4);
+    }
+}
+
+/* ==========================================
+   ESTILOS GLOBALES P
+   ========================================== */
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding: 15px 20px;
+    border-left: 4px solid var(--color-primary);
+    background: linear-gradient(90deg, 
+        rgba(196, 30, 58, 0.1) 0%, 
+        transparent 100%);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+p:hover {
+    border-left-color: var(--color-accent);
+    background: linear-gradient(90deg, 
+        rgba(251, 191, 36, 0.15) 0%, 
+        transparent 100%);
+    transform: translateX(10px);
+}
+
+p::first-letter {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+/* ==========================================
+   BACKGROUNDS AVANZADOS
+   ========================================== */
+
+/* Background animado general */
+body {
+    background: linear-gradient(-45deg, #0f0f0f, #1a1a2e, #2d1b3d, #0f0f0f);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+    position: relative;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Overlay de patrón */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(196, 30, 58, 0.03) 0px,
+            rgba(196, 30, 58, 0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        );
+    pointer-events: none;
+    z-index: 1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(196, 30, 58, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================================
+   NAVEGACIÓN
+   ========================================== */
+.navbar {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #1a1a2e 100%);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: var(--color-accent);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #2d1b3d 100%);
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(196, 30, 58, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-shadow: 
+        0 0 20px rgba(196, 30, 58, 0.8),
+        0 0 40px rgba(196, 30, 58, 0.4);
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    border: none;
+    background: transparent;
+    padding: 0;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.btn-hero {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #a01428 100%);
+    color: white;
+    border: 2px solid var(--color-accent);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.4);
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 0 30px rgba(196, 30, 58, 0.6),
+        0 0 40px rgba(251, 191, 36, 0.3);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #f59e0b 100%);
+    color: var(--color-dark);
+}
+
+/* ==========================================
+   CONTENEDOR GENERAL
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 5;
+}
+
+/* ==========================================
+   SECCIÓN DE PERSONAJES
+   ========================================== */
+.personajes {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a2e 100%);
+    border-top: 3px solid var(--color-primary);
+    position: relative;
+    z-index: 5;
+}
+
+.personajes h2,
+.temporadas h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-accent);
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+}
+
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card-personaje {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.2);
+}
+
+.card-personaje:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(196, 30, 58, 0.4);
+    border-color: var(--color-accent);
+}
+
+/* ==========================================
+   ESTILOS DE IMÁGENES - FORMAS ESPECIALES
+   ========================================== */
+.card-imagen {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    /* Forma: clip-path para bordes especiales */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+/* Variantes de formas para imágenes */
+.card-imagen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(196, 30, 58, 0.2) 0%, 
+        rgba(251, 191, 36, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* Borde decorativo animado */
+.card-imagen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    animation: rotate-border 4s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card-personaje h3 {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-personaje p {
+    color: var(--color-text);
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    border: none;
+    background: transparent;
+    border-left: none;
+}
+
+.card-personaje p::first-letter {
+    color: var(--color-accent);
+}
+
+/* ==========================================
+   SECCIÓN DE TEMPORADAS
+   ========================================== */
+.temporadas {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f0f 100%);
+    border-top: 3px solid var(--color-accent);
+    position: relative;
+    z-index: 5;
+}
+
+.temporadas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card-temporada {
+    background: linear-gradient(135deg, #2d1b3d 0%, #1a1a2e 100%);
+    border-left: 5px solid var(--color-primary);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    /* Forma hexagonal */
+    clip-path: polygon(0 20%, 5% 0, 100% 0, 100% 80%, 95% 100%, 0 100%);
+    padding: 2.5rem 2rem;
+}
+
+.card-temporada::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.card-temporada:hover::before {
+    transform: scaleX(1);
+}
+
+.card-temporada:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+}
+
+.card-temporada h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(196, 30, 58, 0.4);
+}
+
+.card-temporada p {
+    color: var(--color-text);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    background: transparent;
+    border-left: none;
+    padding: 0;
+}
+
+.card-temporada .año {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary), #a01428);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+    transition: var(--transition);
+}
+
+.card-temporada .año:hover {
+    background: linear-gradient(135deg, var(--color-accent), #f59e0b);
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #0a0a0a 100%);
+    padding: 2rem 0;
+    border-top: 3px solid var(--color-primary);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    border: none;
+    background: transparent;
+    border-left: none;
+    padding: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    width: 100%;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+    text-shadow: 0 0 10px rgba(196, 30, 58, 0.5);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.8rem;
+    }
+
+    .personajes h2,
+    .temporadas h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .personajes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .temporadas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-imagen {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn-hero {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
