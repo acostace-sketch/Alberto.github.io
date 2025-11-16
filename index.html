@@ -2,9 +2,97 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hola Mundo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimetsu no Yaiba - Demon Slayer</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>Hola Mundo</h1>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">⚔️ KIMETSU</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#personajes">Personajes</a></li>
+                <li><a href="#temporadas">Temporadas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>KIMETSU NO YAIBA</h1>
+            <p>Demon Slayer - La batalla contra los demonios comienza aquí</p>
+            <button class="btn-hero">Ver más</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PERSONAJES -->
+    <section class="personajes" id="personajes">
+        <div class="container">
+            <h2>PERSONAJES PRINCIPALES</h2>
+            <div class="personajes-grid">
+                <div class="card-personaje">
+                    <div class="card-imagen" style="background: linear-gradient(135deg, #1a1a2e, #c41e3a);"></div>
+                    <h3>Tanjiro Kamado</h3>
+                    <p>Protagonista principal</p>
+                </div>
+                <div class="card-personaje">
+                    <div class="card-imagen" style="background: linear-gradient(135deg, #0f3460, #16c784);"></div>
+                    <h3>Nezuko Kamado</h3>
+                    <p>Hermana demonio</p>
+                </div>
+                <div class="card-personaje">
+                    <div class="card-imagen" style="background: linear-gradient(135deg, #2d1b3d, #a78bfa);"></div>
+                    <h3>Shinobu Kocho</h3>
+                    <p>Pilar del Insecto</p>
+                </div>
+                <div class="card-personaje">
+                    <div class="card-imagen" style="background: linear-gradient(135deg, #1a1a1a, #fbbf24);"></div>
+                    <h3>Kyojuro Rengoku</h3>
+                    <p>Pilar del Fuego</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE TEMPORADAS -->
+    <section class="temporadas" id="temporadas">
+        <div class="container">
+            <h2>TEMPORADAS</h2>
+            <div class="temporadas-grid">
+                <div class="card-temporada">
+                    <h3>Temporada 1</h3>
+                    <p>26 Episodios</p>
+                    <span class="año">2019</span>
+                </div>
+                <div class="card-temporada">
+                    <h3>Temporada 2</h3>
+                    <p>18 Episodios</p>
+                    <span class="año">2021</span>
+                </div>
+                <div class="card-temporada">
+                    <h3>Temporada 3</h3>
+                    <p>55 Episodios</p>
+                    <span class="año">2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <p>&copy; 2025 Kimetsu no Yaiba Fans. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">Discord</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

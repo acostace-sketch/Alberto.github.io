@@ -1,1 +1,3 @@
-Hola, Que tal?
+En este proyecto de Github se ha realizado una página web de un ánime que ha cobrado especial relevancia tras el estreno de su película el castillo Infinito. La primera película de una trilogía que le pondrá fin a este ánime. Del anime que estamos hablando como ya habrás intuido es Kimetsu no Yaiba, Demon Slayer.
+El objetivo de esta página es hacerte un breve resumen del lore que tiene este ánime para que cuando se estrenen las otras dos películas las puedas disfrutar casi al 100% y puedas entender prácticamente todas las referencias que se van a hacer.
+Todo esto lo encontrarás en nuestra página web explicado de forma animada y con un estilo que representa lo mejor posible la esencia de Kimetsu no Yaiba
